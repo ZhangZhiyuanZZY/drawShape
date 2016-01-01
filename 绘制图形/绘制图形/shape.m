@@ -26,10 +26,17 @@
     CGContextMoveToPoint(cxt, 100, 100);
     CGContextAddLineToPoint(cxt, 200, 200);
     CGContextAddLineToPoint(cxt, 300, 100);
+//    CGContextAddLineToPoint(cxt, 100, 100);
     CGContextClosePath(cxt);
     
-    CGContextAddPath(cxt, path);
-    CGContextStrokePath(cxt);//stroke是描边
 
+    CGContextAddPath(cxt, path);
+    //设置颜色
+//        [[UIColor redColor]setStroke];
+    [[UIColor yellowColor]setFill];
+    //    [[UIColor blueColor]set];
+    
+//    CGContextStrokePath(cxt);//stroke是描边
+    CGContextFillPath(cxt);
 }
 @end
