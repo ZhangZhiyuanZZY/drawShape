@@ -14,20 +14,32 @@
 {
 //    [self triangle];
 //    [self setupImage];
-    [self setupRect];
-    
+//    [self setupRect];
+    [self yuan];
 }
 
-//画矩形&圆
+
+- (void)yuan
+{
+    //圆弧
+    UIBezierPath *bzrPath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(200, 200) radius:100 startAngle:0 endAngle:M_PI_2 clockwise:NO];
+//     [bzrPath addLineToPoint:CGPointMake(125, 125)];
+    [bzrPath stroke];
+}
+
+
+//画矩形&圆$圆角矩形
 - (void)setupRect
 {
     CGContextRef ctx = UIGraphicsGetCurrentContext();
 
 //    UIBezierPath *bzrPath = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 100, 200)];
-    UIBezierPath *bzrPath = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, 100, 100)];
+//    UIBezierPath *bzrPath = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, 200, 100)];
+    UIBezierPath *bzrPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(200, 200, 100, 100) cornerRadius:100];
     CGContextAddPath(ctx, bzrPath.CGPath);
     [[UIColor redColor]setFill];
     [[UIColor blueColor]setStroke];
+    [[UIColor orangeColor]set];
 //    CGContextStrokePath(ctx);
     CGContextDrawPath(ctx, kCGPathFillStroke);
 }
