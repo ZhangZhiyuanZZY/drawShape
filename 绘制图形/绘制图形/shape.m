@@ -24,7 +24,7 @@
     //圆弧
     UIBezierPath *bzrPath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(200, 200) radius:100 startAngle:0 endAngle:M_PI_2 clockwise:NO];
 //     [bzrPath addLineToPoint:CGPointMake(125, 125)];
-    [bzrPath stroke];
+    [bzrPath fill];
 }
 
 
